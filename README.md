@@ -30,7 +30,7 @@ images into one image, and it will add those additional borders on top of it.
 
 Features:
 
-	Split Render
+Split Render
 	
 - Render single frames or animations.
 - Split final image into small pieces, and merge them automatically. 
@@ -38,7 +38,7 @@ Features:
 - Option in OpenEXR Multilayer format to separate passes into different files.
 - System failure detector. If anything goes wrong, SRT detects it and offers you the option to fix it with one click. 
 
-	Animated Border
+Animated Border
 	
 - Animate render border like any other object.
 - Keyframe options to add and remove them.
@@ -48,7 +48,7 @@ Features:
 - Option to blur edges based on ellipse mask.
 - Option to control the blur size.
 
-	Common
+Common
 	
 - Option to use Blender's output file instead of the same folder as Blend file.
 - Information about resolution and border sizes.
@@ -80,14 +80,14 @@ How to install this addon:
 How to use this addon:
 
 
-  First steps
+First steps
 	
 - Due to the nature of SRT, the project file from within its executed will be slightly modified and saved. SRT automatically detects any failure
   on its processes, and shows a button to fix them (if is the case). Anyway, it is A GOOD PRACTICE to duplicate your original project (to have a
   backup of it) before use SRT.
 
 
-	Split Render
+Split Render
 	
 - Set your scene settings as usual (file format, resolution, start and end frames, passes, etc)
 - Select number of splits in addon preferences (I've managed to render a 16k image with 6 splits in an AMD RADEON 570 4GB, but it depends on the
@@ -98,7 +98,7 @@ How to use this addon:
 - You can enable Don't delete cropped files to preserve , split files
 
 
-	Animated border	
+Animated border	
 
 - Set your scene settings as usual (file format, resolution, start and end frames, passes, etc).
 - Jump to the frame you want to add key, expand Animated border settings tab, set the crop region to your liking, and press Add keyframe button.
