@@ -30,7 +30,7 @@ images into one image, and it will add those additional borders on top of it.
 
 Features:
 
-  Split Render
+	Split Render
 	
 - Render single frames or animations.
 - Split final image into small pieces, and merge them automatically. 
