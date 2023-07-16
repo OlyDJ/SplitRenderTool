@@ -11,6 +11,7 @@ SRT goes far away from other similar add-ons, being able to render single frames
 Features:
 
 Split Render feature
+
 It is well known that split a render into several pieces and merge them later has issues with Denoising internal AI. Blender Denoising works by analising all the image, processing all pixels, and returning the final image. So when we split an image, it just analise those pixels, but AI does not know what is beyond them. The resulting image after merge all pieces will have at the borders some pixels that will not match with the rest of the image. Leaving us with a useless image.
 
 SRT fixes that issue WITHOUT user interaction. This is how it handles the render:
@@ -24,6 +25,7 @@ After selecting the number of splits, it will render them, and additionally it w
 - System failure detector. If anything goes wrong, SRT detects it and offers you the option to fix it with one click. 
 
 Animated Border feature
+
 This feature will save you a lot of render time. After a render, it can happen that some object is wrong, or you forgot to hide something. With this add-on you will be able to animate Blender's Crop Region along the timeline (just like any other property).
 
 First you need to create keyframes using the in-built Keyframe System, then you must bake the animation (to process the rest of frames).
@@ -36,7 +38,7 @@ First you need to create keyframes using the in-built Keyframe System, then you 
 - Option to blur edges based on ellipse mask.
 - Option to control the blur size.
 
-Common features:
+Common features
 
 - Option to use Blender's output file instead of the same folder as Blend file.
 - Information about resolution and border sizes.
