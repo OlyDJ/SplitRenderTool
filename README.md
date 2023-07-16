@@ -31,7 +31,7 @@ First you need to create keyframes using the in-built Keyframe System, then you 
 - Animate render border like any other object.
 - Keyframe options to add and remove them.
 - Bake system to animate border.
-- Preview crop region while scrolling the timeline, like animating any object property. (NOTE: Preview crop region only works in Blender 3.6 +)
+- Preview crop region while scrolling the timeline, like animating any object property.
 - Option to create a new Blender file with a composition that blurs the edges of the image.
 - Option to blur edges based on ellipse mask.
 - Option to control the blur size.
