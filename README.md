@@ -1,45 +1,33 @@
-SPLIT RENDER TOOL
-Blender Addon
+SPLIT RENDER TOOL - Blender Addon
 
-Are you getting "System is out of GPU memory" error? Do you want/need to render a 32K image? Did you render a sequence in which one object is wrong, 
-but you don't want to render the hole sequence again? Do you have some older graphics cards (2GB, 4GB, etc) that can't process any of your projects?
-Split Render Tool is the addon you need.
+Are you getting "System is out of GPU memory" error? Do you want/need to render a 32K image? Did you render a sequence in which one object is wrong, but you don't want to render the whole sequence again? Do you have some older graphics cards (2GB, 4GB, etc) that can't process any of your projects? Split Render Tool is the add-on you need.
 
-SRT brings 2 different functionalities to you:
+Supports Blender 2.93.3 - 3.6, and both Cycles and Eevee engines. (NOTE: Eevee does not support Split Render animations yet)
 
-On one hand, you will be able to animate Blender's crop area frame by frame, bringing the ability to render any part in your scene. This way you don't 
-need to render the hole frame, saving you a lot of time.
+SRT brings 2 different functionalities to you: On one hand, you will be able to animate Blender's crop area frame by frame, bringing the ability to render any part in your scene. This way you don't need to render the whole frame, saving you a lot of time. And on the other hand, it claims to be able to render any file size and any project, on any hardware using your GPU (NOTE: 512 and 1GB GPUs will not be able to render large files resolutions yet, like 8K +). It will split the render into small pieces, and merge them later. User interaction is not needed at all to merge split files.
 
-And on the other hand, it claims to be able to render any file size and any project, on any hardware using your GPU (NOTE: 512 and 1GB GPUs will not 
-be able to render large files resolutions yet, like 8K +). It will split the render into small pieces, and merge them later. User interaction is not 
-needed at all to merge split files.
-
-SRT goes far away from other similar addons, being able to render single frames and animations. It renders in any file format, and there is an option 
-to render in OpenEXR Multilayer format separate passes into different files.
-
-It is well known that split a render into several pieces and merge them later has issues with Denoising internal AI. Blender Denoising works by 
-analizing all the image, processing all pixels, and returning the final image. So when we split an image, it just analize those pixels, but AI does 
-not know what is beyond them. The resulting image after merge all pieces will have at the borders some pixels that not match with the rest of the 
-image. Leaving us with a useless image.
-
-SRT fixes that issue WITHOUT user interaction. This is how it handles the render:
-After selecting the number of splits, it will render them, and additionally it will render the borders with some margin. Then it compose the split 
-images into one image, and it will add those additional borders on top of it.
-
-
+SRT goes far away from other similar add-ons, being able to render single frames, and animations. Render in any file format, being able (in OpenEXR Multilayer format) to separate passes into different files.
 
 Features:
 
-Split Render
-	
+Split Render feature
+It is well known that split a render into several pieces and merge them later has issues with Denoising internal AI. Blender Denoising works by analising all the image, processing all pixels, and returning the final image. So when we split an image, it just analise those pixels, but AI does not know what is beyond them. The resulting image after merge all pieces will have at the borders some pixels that will not match with the rest of the image. Leaving us with a useless image.
+
+SRT fixes that issue WITHOUT user interaction. This is how it handles the render:
+
+After selecting the number of splits, it will render them, and additionally it will render the borders with some margin. Then it compose the split images into one image, and it will add those additional borders on top of it.
+
 - Render single frames or animations.
 - Split final image into small pieces, and merge them automatically. 
 - Fix the split borders issue in final image (only in Combined pass).
 - Option in OpenEXR Multilayer format to separate passes into different files.
 - System failure detector. If anything goes wrong, SRT detects it and offers you the option to fix it with one click. 
 
-Animated Border
-	
+Animated Border feature
+This feature will save you a lot of render time. After a render, it can happen that some object is wrong, or you forgot to hide something. With this add-on you will be able to animate Blender's Crop Region along the timeline (just like any other property).
+
+First you need to create keyframes using the in-built Keyframe System, then you must bake the animation (to process the rest of frames).
+
 - Animate render border like any other object.
 - Keyframe options to add and remove them.
 - Bake system to animate border.
@@ -48,8 +36,8 @@ Animated Border
 - Option to blur edges based on ellipse mask.
 - Option to control the blur size.
 
-Common
-	
+Common features:
+
 - Option to use Blender's output file instead of the same folder as Blend file.
 - Information about resolution and border sizes.
 - Information about render times (Splits of a frame and frames).
@@ -79,7 +67,6 @@ How to install this addon:
 
 How to use this addon:
 
-
 First steps
 	
 - Due to the nature of SRT, the project file from within its executed will be slightly modified and saved. SRT automatically detects any failure
@@ -103,7 +90,6 @@ Animated border
 - Set your scene settings as usual (file format, resolution, start and end frames, passes, etc).
 - Jump to the frame you want to add key, expand Animated border settings tab, set the crop region to your liking, and press Add keyframe button.
 - You need at least 2 keyframes (obviously) to Bake the animation (in order to setup all frames between keyframes).
-	(NOTE: Additionally you can scroll the timeline to create the bake info, from Blender 3.6 +)
 - Then you can press Render animated border button (it will render from start frame to end frame)
 - You can enable Create final composition file, and you will end up with a new Blender file called as the original one, plus "_COMPOSITION"
   (ex: AmazingCube.blend > AmazingCube_COMPOSITOR.blend). There will be two image nodes, the second one is connected to some nodes in order to
